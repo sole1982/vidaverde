@@ -1,0 +1,44 @@
+
+{% load static %}
+
+{% block title %}Productos{% endblock %}
+
+{% block contenido %}
+
+
+    <!-- Carrusel de Productos -->
+    <!-- En lista_productos.html para Bootstrap 5 -->
+    <div id="carouselProductos" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner">
+            {% for producto in productos %}
+                <div class="carousel-item {% if forloop.first %}active{% endif %}">
+                    <div class="card mx-auto" style="max-width: 80vw;">
+                        <div class="row g-0">
+                            <div class="col-md-12">
+                                <img src="{{ producto.imagen.url }}" class="img-fluid" alt="{{ producto.titulo }}" style="width: 100%; height: 80vh; object-fit: cover;">
+                            </div>
+                            <div class="col-md-12">
+                                <div class="card-body">
+                                    <h3 class="card-title">{{ producto.titulo }}</h3>
+                                   
+                                    <a class="dropdown-item" href="{% url 'productos:detalle_producto' producto.pk %}" style="color: green;">Comprar</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+        <button class="carousel-control-prev btn-dark" type="button" data-bs-target="#carouselProductos" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Anterior</span>
+        </button>
+        <button class="carousel-control-next btn-dark" type="button" data-bs-target="#carouselProductos" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Siguiente</span>
+        </button>
+    </div>
+    
+
+   
+{% endblock %}

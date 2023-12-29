@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+
+{% block contenido %}
+
+<div class="container-fluid d-flex align-items-center justify-content-center" style="height: 100vh;">
+    <div class="card p-4" style="max-width: 400px;">
+        <h1 class="text-center mb-4">Agregar nueva Categoría</h1>
+        <form method="post">
+            {% csrf_token %}
+            {{ form|crispy }}
+            <div class="mb-3">
+                <input type="submit" class="btn btn-success" value="Agregar">
+            </div>
+        </form>
+        <div class="text-center">
+            <a id="boton_post" href="{% url 'apps.posts:categoria_list' %}" class="btn btn-link">Listar todas las categorías</a>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

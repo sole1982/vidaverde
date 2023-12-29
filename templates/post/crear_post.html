@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+{% load colaborador_tags %}
+{% block contenido %}
+
+
+{% if user.is_superuser or request.user|has_group:"colaborador" %}
+<div class="container mt-5">
+  <div class="row justify-content-center">
+      <div class="col-md-6">
+          <h1 class="text-center mb-4">Crear Post</h1>
+          <form method="POST" enctype="multipart/form-data">
+              
+                {% csrf_token %}
+                {{ form|crispy }}
+                <input type = "submit" value="Guardar">
+            </form>
+            
+{% else %}
+    <div class="container-fluid" style="margin: 300px;">
+       <h1> Solo usuarios con permisos puede acceder a ésta página</h1>
+    </div>
+{% endif %}
+
+
+{% endblock %}
+
+
+
