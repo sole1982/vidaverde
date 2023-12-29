@@ -1,0 +1,1 @@
+# En blog/models.py
