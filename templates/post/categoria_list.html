@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+
+{% block contenido %}
+
+<div class="container-fluid my-5">
+  <div class="container-fluid d-flex justify-content-end">
+      <a id="boton_post" href="{% url 'apps.posts:crear_categoria' %}" class="btn btn-success">
+          
+          Crear nueva Categoría
+      </a>
+  </div>
+</div>
+
+<div class="container my-5">
+    <h1 class="text-center">Categorías</h1>
+    <br>
+    {% if categorias %}
+      <ul class="list-group">
+        {% for categoria in categorias %}
+          <li class="list-group-item d-flex justify-content-between align-items-center">
+            <div style="max-width: 200px; overflow: hidden; text-overflow: ellipsis;">
+              {{ categoria.nombre }}
+            </div>
+            <span>
+              <a class="text-danger" href="{% url 'apps.posts:categoria_delete' pk=categoria.pk %}">Eliminar</a>
+            </span>
+          </li>
+        {% endfor %}
+      </ul>
+    {% else %}
+      <p class="text-center">No hay categoría</p>
+    {% endif %}
+  </div>
+  
+
+
+
+
+{% endblock %} 

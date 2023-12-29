@@ -1,0 +1,179 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+
+
+
+{% block contenido %}
+
+<div class = "container-fluid mx-auto" style = "margin:200px;">
+
+<main class="container mx-auto">
+  {% if posts %}
+    {% with latest_post=posts.last %}
+    <div class="col-lg-8 mx-auto" style="background-color: rgba(58, 227, 24, 0.232); position: relative; height: 200px;">
+ 
+           
+        <div class="col-lg-4 px-5  text-start" style="font-size: x-large; z-index: 5;position: relative; margin-top: 20px; padding-top: 15px; padding-bottom: 2px; border-radius: 10px;">
+          <h1 class="display-4 fst-italic">{{ latest_post.titulo }}</h1>
+          <p class="lead my-3">{{ latest_post.subtitulo }}</p>
+          <p class="lead mb-0"><a href="{% url 'apps.posts:post_individual' latest_post.id %}"class="text-body-emphasis fw-bold">Continuar leyendo</a></p> 
+        </div>         
+          <!--fondo de pagnina tarjeta-->
+<div style="background-color: rgba(85, 183, 106, 0.172); position: absolute; bottom: 0; left: 0; right: 0; height: 155px; ">
+  
+  
+ 
+<svg xmlns="http://www.w3.org/2000/svg" width="122" height="177" viewBox="0 0 122 177" fill="none"style="position: absolute; top: -20px; left: 0px; z-index: 1;">
+  <g filter="url(#filter0_d_20_8907)">
+    <path d="M89.3201 3C148.58 203.02 10.7601 192.98 10.7601 192.98C10.7601 192.98 -93.8999 102.75 89.3201 3Z" fill="#ACEF6A"/>
+  </g>
+  <path d="M89.3201 3L10.7601 192.98C10.7601 192.98 148.58 203.02 89.3201 3Z" fill="#94D75B"/>
+  <defs>
+    <filter id="filter0_d_20_8907" x="-22" y="0" width="143.121" height="210.064" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+      <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+      <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+      <feOffset dx="7" dy="7"/>
+      <feGaussianBlur stdDeviation="5"/>
+      <feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.2 0"/>
+      <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_20_8907"/>
+      <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_20_8907" result="shape"/>
+    </filter>
+  </defs>
+</svg>
+
+
+
+<svg xmlns="http://www.w3.org/2000/svg" width="159" height="73" viewBox="0 0 159 73" fill="none"style="position: absolute; top: 84px; left: 29px;">
+  <g filter="url(#filter0_d_20_8872)">
+    <path d="M141.464 8.47388C79.5643 154.374 3.61422 81.8939 3.61422 81.8939C3.61422 81.8939 -14.1557 -21.5761 141.464 8.47388Z" fill="#71BE63"/>
+  </g>
+  <path d="M141.464 8.47388L3.61426 81.8939C3.61426 81.8939 79.5643 154.374 141.464 8.47388Z" fill="#43AB5F"/>
+  <defs>
+    <filter id="filter0_d_20_8872" x="0" y="0" width="158.464" height="116.897" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+      <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+      <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+      <feOffset dx="7" dy="7"/>
+      <feGaussianBlur stdDeviation="5"/>
+      <feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.2 0"/>
+      <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_20_8872"/>
+      <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_20_8872" result="shape"/>
+    </filter>
+  </defs>
+</svg>
+
+<svg xmlns="http://www.w3.org/2000/svg" width="221" height="144" viewBox="0 0 221 144" fill="none" style="position: absolute; top: 13px; right: 71; z-index: 1;" >
+  <g filter="url(#filter0_d_20_8911)">
+    <path d="M3 3C263.04 13.28 195.87 172.04 195.87 172.04C195.87 172.04 47.28 259.45 3 3Z" fill="#94D75B"/>
+  </g>
+  <path d="M3 3L195.87 172.04C195.87 172.04 263.04 13.28 3 3Z" fill="#71BE63"/>
+  <defs>
+    <filter id="filter0_d_20_8911" x="0" y="0" width="220.664" height="203.403" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+      <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+      <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+      <feOffset dx="7" dy="7"/>
+      <feGaussianBlur stdDeviation="5"/>
+      <feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.2 0"/>
+      <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_20_8911"/>
+      <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_20_8911" result="shape"/>
+    </filter>
+  </defs>
+</svg>
+
+<svg xmlns="http://www.w3.org/2000/svg" width="151" height="141" viewBox="0 0 151 141" fill="none"style="position: absolute; top: 15px; right: 50; z-index:2; "  >
+  <g filter="url(#filter0_d_20_8848)">
+    <path d="M8.4257 3C204.416 79.6 111.106 183.16 111.106 183.16C111.106 183.16 -25.5443 210.67 8.4257 3Z" fill="#43AB5F"/>
+  </g>
+  <path d="M8.42566 3L111.106 183.16C111.106 183.16 204.406 79.6 8.42566 3Z" fill="#3C9B61"/>
+  <defs>
+    <filter id="filter0_d_20_8848" x="0" y="0" width="150.305" height="201.367" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+      <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+      <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+      <feOffset dx="7" dy="7"/>
+      <feGaussianBlur stdDeviation="5"/>
+      <feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.2 0"/>
+      <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_20_8848"/>
+      <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_20_8848" result="shape"/>
+    </filter>
+  </defs>
+</svg>
+
+<svg xmlns="http://www.w3.org/2000/svg" width="167" height="153" viewBox="0 0 167 153" fill="none" style="position: absolute; top: 5px; right: 0; z-index: 3;"    >
+  <g filter="url(#filter0_d_20_8857)">
+    <path d="M3 3C244.54 12.55 182.15 160.02 182.15 160.02C182.15 160.02 44.13 241.21 3 3Z" fill="#94D75B"/>
+  </g>
+  <path d="M3 3L182.15 160.02C182.15 160.02 244.55 12.55 3 3Z" fill="#71BE63"/>
+  <defs>
+    <filter id="filter0_d_20_8857" x="0" y="0" width="206.389" height="190.36" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+      <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+      <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+      <feOffset dx="7" dy="7"/>
+      <feGaussianBlur stdDeviation="5"/>
+      <feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.2 0"/>
+      <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_20_8857"/>
+      <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_20_8857" result="shape"/>
+    </filter>
+  </defs>
+</svg>
+<svg xmlns="http://www.w3.org/2000/svg" width="168" height="156" viewBox="0 0 168 156" fill="none" style="position: absolute; top: 1px; right: 71; z-index: 1;">
+  <g filter="url(#filter0_d_20_8836)">
+    <path d="M12.0674 3C233.737 99.42 122.147 214.26 122.147 214.26C122.147 214.26 -35.9126 239.92 12.0674 3Z" fill="#C0F492"/>
+  </g>
+  <path d="M12.0674 3L122.147 214.26C122.147 214.26 233.737 99.42 12.0674 3Z" fill="#B0EB81"/>
+  <defs>
+    <filter id="filter0_d_20_8836" x="0" y="0" width="167.235" height="232.073" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+      <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+      <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+      <feOffset dx="7" dy="7"/>
+      <feGaussianBlur stdDeviation="5"/>
+      <feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.2 0"/>
+      <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_20_8836"/>
+      <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_20_8836" result="shape"/>
+    </filter>
+  </defs>
+</svg>
+
+</div>
+    
+      </div>
+    {% endwith %}
+  {% else %}
+    <h1>No hay registros</h1>
+  {% endif %}
+
+
+
+  <div class="row m-4" >
+  
+    {% for i in posts %} 
+       
+    <div class="col-md-6 " >
+      <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+        <div class="col p-4 d-flex flex-column position-static">
+          <strong class="d-inline-block mb-2 text-primary-emphasis">{{ i.categoria }}</strong>
+          <h3 class="mb-0">{{ i.titulo }}</h3>
+          <div class="mb-1 text-body-secondary">{{ i.fecha}}</div>
+          <p class="card-text mb-auto">{{ i.subtitulo }}</p>
+          <a id="boton_post" href="{% url 'apps.posts:post_individual' i.id %}" class="icon-link gap-1 icon-link-hover stretched-link">
+            Continuar leyendo...
+            <svg class="bi"><use xlink:href="#chevron-right"/></svg>
+          </a>
+        </div>
+        <div class="col-auto d-none d-lg-block">
+          <img class="bd-placeholder-img" width="200" height="250" src="{{ i.imagen.url }}"  >
+       
+         
+       
+        </div>
+        
+      </div>
+     
+    
+    </div>
+  
+{% empty %}
+<h1>no hay registros</h1>
+{% endfor   %}
+
+{%  endblock %}

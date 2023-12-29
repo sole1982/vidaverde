@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+{% block contenido %}
+<div class="container mt-5">
+    <h1 class="text-center">Eliminar Usuario</h1>
+    <p class="text-center"> ¿Estás seguro de que quieres eliminar el usuario <span class="text-success">'{{ object.username }}'</span>?</p>
+    <form method="POST" class="text-center">
+        {% csrf_token %}
+        <input type="submit" class="btn btn-danger mx-2" value="Sí, eliminar">
+        <a href="{% url 'apps.usuario:usuario_list' %}" class="btn btn-secondary mx-2">No, cancelar</a>
+    </form>
+</div>
+{% endblock %}
