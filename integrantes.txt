@@ -1,0 +1,24 @@
+Grupo  N°4 Comision 2 Informatorio
+Prof. Diego Vargas
+
+Integrantes:
+Hernandez Quiroga Maria Soledad
+DNI 29440866
+soleadhernandez@gmail.com 
+
+José Ariel Giménez Vargas.
+CEL: 3625192496
+Email: arielgimenezvargas@gmail.com
+
+Valentino Lezcano
+valen.lezcano17@gmail.com 
+3625261062
+
+
+Nuestro Blog se llama Vida Verde es sobre el medioambiente y la ecologia, tiene secciones como Post, comentraios y productos. Permite usuarios registrados, colaborades y superusuario.
+
+Enlace al repositorio: https://github.com/sole1982/vidaverde.git
+Enlace a la pagina: https://vidaverde.pythonanywhere.com/
+
+
+
