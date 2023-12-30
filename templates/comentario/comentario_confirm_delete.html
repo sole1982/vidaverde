@@ -4,7 +4,7 @@
 
 {% block contenido %}
 
-    {% if user.is_superuser or request.user|has_group:"Colaborador"  %}
+    {% if user.is_superuser or request.user|has_group:"colaborador"  %}
     <form method="post" id="deleteForm">
         {% csrf_token %}
         <input type="hidden" name="next" value="{{ request.get_full_path }}">
